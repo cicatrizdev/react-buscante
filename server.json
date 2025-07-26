@@ -1,0 +1,32 @@
+{
+  "favorites": [
+    {
+      "id": "j_p1DwAAQBAJ",
+      "title": "Inside the World of Harry Potter",
+      "author": "Christopher E. Bell",
+      "publishedDate": "2018-10-29",
+      "publisher": "McFarland",
+      "pageCount": 192,
+      "categories": [
+        "Social Science"
+      ],
+      "description": "Many scholars recognize the importance of Harry Potter as a vehicle for discussions about society--from race relations and gender studies to economic, political, religious and educational applications of the texts. This interdisciplinary collection of new essays brings to the forefront a critique of modern Western society, using Harry's world as a mirror to our own. Covering issues surrounding parenting and family relations, social class, life and death, the link between identity and morality and even the risks of time travel, this collection provides many jumping-off points for scholars and nonscholars alike to spark discussions about both Harry's world and our own.",
+      "thumbnail": "http://books.google.com/books/content?id=j_p1DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "previewLink": "http://books.google.com.br/books?id=j_p1DwAAQBAJ&pg=PA74&dq=harry+potter&hl=&as_pt=BOOKS&cd=17&source=gbs_api",
+      "infoLink": "https://play.google.com/store/books/details?id=j_p1DwAAQBAJ&source=gbs_api"
+    },
+    {
+      "id": "_PMUa7tCNsMC",
+      "title": "O Senhor Senhor Dos Ane o Mundo De Toekien",
+      "author": "Unknown Author",
+      "publishedDate": "",
+      "publisher": "Editora Record",
+      "pageCount": 236,
+      "categories": [],
+      "description": "",
+      "thumbnail": "http://books.google.com/books/content?id=_PMUa7tCNsMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "previewLink": "http://books.google.com.br/books?id=_PMUa7tCNsMC&printsec=frontcover&dq=senhor+dos+aneis&hl=&as_pt=BOOKS&cd=4&source=gbs_api",
+      "infoLink": "http://books.google.com.br/books?id=_PMUa7tCNsMC&dq=senhor+dos+aneis&hl=&as_pt=BOOKS&source=gbs_api"
+    }
+  ]
+}
