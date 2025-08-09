@@ -1,47 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getBookById } from '../services/googleBooksApi';
-import { useFavorites } from '../contexts/FavoritesContext';
-import type { Book } from '../types/Book';
+import { useBookData } from '../hooks/useBookData';
 
 const BookDetails: React.FC = () => {
 	const { id } = useParams<{ id: string }>();
 	const navigate = useNavigate();
-	const [book, setBook] = useState<Book | null>(null);
-	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState<string | null>(null);
-	const { addFavorite, removeFavorite, isFavorite } = useFavorites();
+	const { book, isLoading, error, toggleFavorite } = useBookData(id);
 
-	useEffect(() => {
-		const fetchBook = async () => {
-			if (!id) return;
-
-			setIsLoading(true);
-			setError(null);
-
-			try {
-				const foundBook = await getBookById(id);
-				setBook(foundBook);
-			} catch (err) {
-				console.error('Erro ao buscar livro:', err);
-				setError('Não foi possível carregar os detalhes do livro');
-			} finally {
-				setIsLoading(false);
-			}
-		};
-
-		fetchBook();
-	}, [id]);
-
-	const handleToggleFavorite = () => {
+	const handleToggleFavorite = async () => {
 		if (!book) return;
-
-		const isBookFavorite = isFavorite(book.id);
-		if (isBookFavorite) {
-			removeFavorite(book.id);
-		} else {
-			addFavorite(book);
-		}
+		await toggleFavorite();
 	};
 
 	const handleGoBack = () => {
@@ -157,16 +125,14 @@ const BookDetails: React.FC = () => {
 							<button
 								onClick={handleToggleFavorite}
 								className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors font-poppins ${
-									book && isFavorite(book.id)
+									book && book.isFavorite
 										? 'bg-red-100 text-red-600 hover:bg-red-200'
 										: 'bg-gray-100 text-gray-600 hover:bg-gray-200'
 								}`}
 							>
-								<span>{book && isFavorite(book.id) ? '❤️' : '🤍'}</span>
+								<span>{book && book.isFavorite ? '❤️' : '🤍'}</span>
 								<span>
-									{book && isFavorite(book.id)
-										? 'Remover dos Favoritos'
-										: 'Adicionar aos Favoritos'}
+									{book && book.isFavorite ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos'}
 								</span>
 							</button>
 						</div>
