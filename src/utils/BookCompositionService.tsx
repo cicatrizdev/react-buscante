@@ -1,4 +1,4 @@
-import { isFavorite } from '../services/favoritesApi';
+import { getFavorites, isFavorite } from '../services/favoritesApi';
 import { getBookById } from '../services/googleBooksApi';
 import type { Book } from '../types/Book';
 
@@ -46,8 +46,10 @@ class BookCompositionService {
 	}
 
 	async getComposedBookData(bookId: string): Promise<ComposedBookData | null> {
-		if (!this.isCacheValid(bookId)) {
-			console.log(`[BookCompositionService] Cache invalido para o livro ${bookId}, atualizando...`);
+		if (this.isCacheValid(bookId)) {
+			console.log(
+				`[BookCompositionService] Cache válido para o livro ${bookId}, retornando dados em cache`
+			);
 			return this.cache[bookId]?.data || null;
 		}
 
@@ -86,4 +88,39 @@ class BookCompositionService {
 			this.cache[bookId].timestamp = Date.now();
 		}
 	}
+
+	async preloadBooks(books: Book[]): Promise<void> {
+		const bookIds = books.map((book) => book.id).filter((id) => !this.isCacheValid(id));
+
+		if (bookIds.length === 0) return;
+
+		try {
+			const favorites = await getFavorites();
+			const favoriteIds = new Set(favorites.map((fav) => fav.id));
+
+			books.forEach((book) => {
+				if (!this.isCacheValid(book.id)) {
+					const composedData = this.composedBookData(book, favoriteIds.has(book.id));
+					this.cache[book.id] = { data: composedData, timestamp: Date.now() };
+				}
+			});
+		} catch (error) {
+			console.warn('[BookCompositionService] Erro ao precarregar livros:', error);
+		}
+	}
 }
+
+export const bookCompositionService = new BookCompositionService();
+
+export const getComposedBookData = (bookId: string) =>
+	bookCompositionService.getComposedBookData(bookId);
+
+export const updateBookFavoriteStatus = (bookId: string, isFavoriteStatus: boolean) =>
+	bookCompositionService.updateFavoriteStatus(bookId, isFavoriteStatus);
+
+export const preloadBooksData = (books: Book[]) => bookCompositionService.preloadBooks(books);
+
+export const invalidateBookCache = (bookId: string) =>
+	bookCompositionService.invalidateBook(bookId);
+
+export type { ComposedBookData };
