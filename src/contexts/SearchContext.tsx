@@ -1,9 +1,10 @@
-import { createContext, useContext, useReducer, useEffect } from 'react';
+import { createContext, useContext, useReducer, useEffect, useMemo } from 'react';
 import type { ReactNode } from 'react';
 import type { Book } from '../types/Book';
 import type { SearchState } from '../types/GoogleBooks';
 import { searchBooks } from '../services/googleBooksApi';
 import { preloadBooksData } from '../utils/BookCompositionService';
+import { AsyncStateManager, executeWithState } from '../utils/asyncStateManager';
 
 interface SearchContextType {
 	state: SearchState;
@@ -65,6 +66,8 @@ interface SearchProviderProps {
 }
 
 export const SearchProvider = ({ children }: SearchProviderProps) => {
+	const manager = useMemo(() => new AsyncStateManager(), []);
+
 	// Verifica se há estado salvo no sessionStorage
 	const savedState = sessionStorage.getItem('searchState');
 	const initialStateWithSaved = savedState ? JSON.parse(savedState) : initialState;
@@ -75,7 +78,6 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
 	useEffect(() => {
 		if (state.query || state.books.length > 0) {
 			sessionStorage.setItem('searchState', JSON.stringify(state));
-			console.log('[SearchContext] State saved to sessionStorage:', state);
 		}
 	}, [state]);
 
@@ -86,27 +88,31 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
 
 		dispatch({ type: 'SEARCH_START', payload: query });
 
-		try {
-			const response = await searchBooks(query);
-			const books = response.items || [];
+		const response = await executeWithState(manager, 'search_books', async () =>
+			searchBooks(query)
+		);
 
-			dispatch({
-				type: 'SEARCH_SUCCESS',
-				payload: {
-					books,
-					totalItems: response.totalItems,
-				},
-			});
-
-			if (books.length > 0) {
-				preloadBooksData(books).catch((error) => {
-					console.warn('[SearchContext] Erro ao precarregar dados de composição:', error);
-				});
-			}
-		} catch (error) {
+		if (!response || manager.getError('search_books')) {
 			dispatch({
 				type: 'SEARCH_ERROR',
-				payload: error instanceof Error ? error.message : 'Falha ao buscar livros',
+				payload: manager.getError('search_books') ?? 'Falha ao buscar livros',
+			});
+			return;
+		}
+
+		const books = response.items || [];
+
+		dispatch({
+			type: 'SEARCH_SUCCESS',
+			payload: {
+				books,
+				totalItems: response.totalItems,
+			},
+		});
+
+		if (books.length > 0) {
+			preloadBooksData(books).catch((error) => {
+				console.warn('[SearchContext] Erro ao precarregar dados de composição:', error);
 			});
 		}
 	};

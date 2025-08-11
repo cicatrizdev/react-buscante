@@ -1,34 +1,34 @@
 {
   "favorites": [
     {
-      "id": "pvGrDwAAQBAJ",
-      "title": "Essential TypeScript",
-      "author": "Adam Freeman",
-      "publishedDate": "2019-08-14",
-      "publisher": "Apress",
-      "pageCount": 551,
+      "id": "LEnHs53G0j0C",
+      "title": "Harry Potter Places",
+      "author": "C. D Miller",
+      "publishedDate": "2012-06-08",
+      "publisher": "First Edition Design Pub.",
+      "pageCount": 156,
       "categories": [
-        "Computers"
+        "Fiction"
       ],
-      "description": "Work with Typescript and get the most from this versatile open source language. Author Adam Freeman begins this book by describing Typescript and the benefits it offers, and goes on to show you how to use TypeScript in realistic scenarios, going in-depth to give you the knowledge you need. Starting from the nuts-and-bolts and building up to the most advanced and sophisticated features, you will learn how TypeScript builds on the JavaScript type system to create a safer and more productive development experience and understand how TypeScript can be used to create applications using popular frameworks, including Node.js, Angular, React, and Vue.js. Each topic is covered clearly and concisely and is packed with the details you need to learn to be truly effective. The most important features are given a no-nonsense in-depth treatment and chapters include common problems and details of how to avoid them. What You Will Learn Gain a solid understanding of the TypeScript language and tools Use TypeScript for client- and server-side development Extend and customize TypeScript Debug and unit test your TypeScript code Who This Book Is For Developers who want to start using TypeScript, for example to create rich web applications using Angular, React, or Vue.js Adam Freeman is an experienced IT professional who has held senior positions in a range of companies, most recently serving as chief technology officer and chief operating officer of a global bank. Now retired, he spends his time writing and long-distance running.",
-      "thumbnail": "https://books.google.com/books/content?id=pvGrDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "previewLink": "https://books.google.com.br/books?id=pvGrDwAAQBAJ&pg=PA37&dq=typescript&hl=&as_pt=BOOKS&cd=3&source=gbs_api",
-      "infoLink": "https://play.google.com/store/books/details?id=pvGrDwAAQBAJ&source=gbs_api"
+      "description": "Welcome to Harry Potter Places Book Three--Snitch-Seeking in Southern England and Wales, the third of five guidebooks designed to help Potterites visit all 68 UK Potterverse places: real-life places mentioned in JKR's novels and movie film sites. Go to the website to find Book Three's Table of Contents and learn about all the Harry Potter Places travel guidebooks.",
+      "thumbnail": "https://books.google.com/books/content?id=LEnHs53G0j0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "previewLink": "https://books.google.com.br/books?id=LEnHs53G0j0C&pg=PR3&dq=harry+potter&hl=&as_pt=BOOKS&cd=17&source=gbs_api",
+      "infoLink": "https://play.google.com/store/books/details?id=LEnHs53G0j0C&source=gbs_api"
     },
     {
-      "id": "YD5zEAAAQBAJ",
-      "title": "Learning TypeScript",
-      "author": "Josh Goldberg",
-      "publishedDate": "2022-06-03",
-      "publisher": "\"O'Reilly Media, Inc.\"",
-      "pageCount": 320,
+      "id": "fpAHEQAAQBAJ",
+      "title": "TypeScript Crash Course",
+      "author": "Daniel Cavalcante",
+      "publishedDate": "2024-05-14",
+      "publisher": "BPB Publications",
+      "pageCount": 345,
       "categories": [
         "Computers"
       ],
-      "description": "TypeScript has conquered the world of JavaScript: it's one of the world's fastest growing and most popular languages across developer surveys, widely used in consumer and business companies alike, and frequently credited for helping massive web applications scale. But what is TypeScript? How does it work, why does it work, and how can we use it? Learning TypeScript takes beginner to intermediate JavaScript programmers from knowing nothing about \"types\" or a \"type system\" to full mastery of the fundamentals of TypeScript. It's more than a means to find bugs and typos--it's a useful system for declaring the way our JavaScript should work and helping us stick to it.",
-      "thumbnail": "https://books.google.com/books/content?id=YD5zEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "previewLink": "https://books.google.com.br/books?id=YD5zEAAAQBAJ&pg=PA14&dq=typescript&hl=&as_pt=BOOKS&cd=4&source=gbs_api",
-      "infoLink": "https://books.google.com.br/books?id=YD5zEAAAQBAJ&dq=typescript&hl=&as_pt=BOOKS&source=gbs_api"
+      "description": "Build scalable and reliable web applications with TypeScript KEY FEATURES ● Learn about basic and advanced TypeScript concepts. ● Build a simple Todo application using TypeScript with JavaScript, React, and Node. ● Using TypeScript to write tests, incorporating third-party libraries, and deploying to production. DESCRIPTION Navigating the dynamic landscape of web development can be a daunting task, \"TypeScript Crash Course\" is a guide to help you on the journey of mastering TypeScript, one of today's most sought-after skills in the tech market. Starting from the basics and core principles to gradually building up to more advanced concepts, this book will help you move to practical examples of converting an application from JavaScript, React, and Node to TypeScript. This book also offers insights into leveraging TypeScript for both front-end and back-end development, ensuring readers can tackle any project with confidence, from development to deployment. This guide is not just about learning a new programming language; it is about enhancing your career in the tech industry by building more reliable applications. This book focuses on applying TypeScript in diverse practical scenarios to significantly shorten your learning curve. It also dispels common myths and misconceptions about TypeScript, equipping you with the knowledge to navigate your career paths successfully. WHAT YOU WILL LEARN ● Master TypeScript fundamentals and more advanced concepts to develop scalable web applications. ● Transition seamlessly from JavaScript to TypeScript, enhancing code reliability and maintainability. ● Apply TypeScript in real-world scenarios, such as migrating JavaScript applications, designing user interfaces with React, and developing server-side applications with Node. ● Understand and implement advanced TypeScript features, such as generics and decorators. ● Selecting the right tools and frameworks to boost project efficiency and performance. WHO THIS BOOK IS FOR This book is ideal for web developers, software engineers, and programming enthusiasts eager to expand their JavaScript skills into TypeScript. It is perfect for those aiming to enhance their web development prowess and employability in the tech industry. TABLE OF CONTENTS 1. Introduction to TypeScript 2. Installation and Setup 3. TypeScript's Fundamentals 4. Structuring and Extending Types 5. Working with Advanced TypeScript Features 6. Migrating a JavaScript Web App to TypeScript 7. Adding TypeScript to a React Application 8. Using TypeScript with a Node.js Application 9. Building TypeScript for Production 10. Best Practices and Next Steps",
+      "thumbnail": "https://books.google.com/books/content?id=fpAHEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "previewLink": "https://books.google.com.br/books?id=fpAHEQAAQBAJ&pg=PT25&dq=typescript&hl=&as_pt=BOOKS&cd=5&source=gbs_api",
+      "infoLink": "https://play.google.com/store/books/details?id=fpAHEQAAQBAJ&source=gbs_api"
     }
   ]
 }
