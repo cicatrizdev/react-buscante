@@ -2,7 +2,7 @@ import { createContext, useContext, useReducer, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import type { Book } from '../types/Book';
 import type { SearchState } from '../types/GoogleBooks';
-import { searchBooks, transformGoogleBookToBook } from '../services/googleBooksApi';
+import { searchBooks } from '../services/googleBooksApi';
 import { preloadBooksData } from '../utils/BookCompositionService';
 
 interface SearchContextType {
@@ -88,7 +88,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
 
 		try {
 			const response = await searchBooks(query);
-			const books = response.items?.map(transformGoogleBookToBook) || [];
+			const books = response.items || [];
 
 			dispatch({
 				type: 'SEARCH_SUCCESS',

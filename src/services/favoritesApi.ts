@@ -1,5 +1,6 @@
 import type { Book } from '../types/Book';
 import fetchWithTimeout from '../utils/fetchWithTimeout';
+import { favoritesAdapter } from '../utils/FavoritesAdapter';
 
 const FAVORITES_API_URL = 'http://localhost:3001/favorites';
 
@@ -11,7 +12,8 @@ export const getFavorites = async (): Promise<Book[]> => {
 			throw new Error(`Falha ao buscar favoritos: ${response.statusText}`);
 		}
 
-		return response.json();
+		const rawFavorites = await response.json();
+		return favoritesAdapter.transformArray(rawFavorites);
 	} catch (error) {
 		console.error('Error fetching favorites:', error);
 		throw error;
@@ -34,7 +36,8 @@ export const addToFavorites = async (book: Book): Promise<Book> => {
 			throw new Error(`Falha ao adicionar aos favoritos: ${response.statusText}`);
 		}
 
-		return response.json();
+		const rawBook = await response.json();
+		return favoritesAdapter.transform(rawBook);
 	} catch (error) {
 		console.error('Error adding to favorites:', error);
 		throw error;

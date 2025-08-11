@@ -1,6 +1,7 @@
 import type { GoogleBooksResponse, GoogleBooksVolume } from '../types/GoogleBooks';
 import type { Book } from '../types/Book';
 import fetchWithTimeout from '../utils/fetchWithTimeout';
+import { googleBooksAdapter } from '../utils/GoogleBooksAdapter';
 
 const GOOGLE_BOOKS_API_URL = 'https://www.googleapis.com/books/v1/volumes';
 
@@ -27,24 +28,11 @@ export const searchBooks = async (
 		throw new Error(`Falha ao buscar livros: ${response.statusText}`);
 	}
 
-	return response.json();
-};
-
-export const transformGoogleBookToBook = (googleBook: GoogleBooksVolume): Book => {
-	const { id, volumeInfo } = googleBook;
-
+	const rawGoogleBooks = await response.json();
 	return {
-		id,
-		title: volumeInfo.title || 'Unknown Title',
-		author: volumeInfo.authors?.join(', ') || 'Unknown Author',
-		publishedDate: volumeInfo.publishedDate || '',
-		publisher: volumeInfo.publisher || '',
-		pageCount: volumeInfo.pageCount || 0,
-		categories: volumeInfo.categories || [],
-		description: volumeInfo.description || '',
-		thumbnail: volumeInfo.imageLinks?.thumbnail || '',
-		previewLink: volumeInfo.previewLink || '',
-		infoLink: volumeInfo.infoLink || '',
+		kind: rawGoogleBooks.kind,
+		totalItems: rawGoogleBooks.totalItems,
+		items: googleBooksAdapter.transformArray(rawGoogleBooks.items),
 	};
 };
 
@@ -57,7 +45,7 @@ export const getBookById = async (id: string): Promise<Book | null> => {
 		}
 
 		const googleBook: GoogleBooksVolume = await response.json();
-		return transformGoogleBookToBook(googleBook);
+		return googleBooksAdapter.transform(googleBook);
 	} catch (error) {
 		console.error('Error fetching book by ID:', error);
 		return null;
