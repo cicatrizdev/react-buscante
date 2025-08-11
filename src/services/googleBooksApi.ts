@@ -2,6 +2,7 @@ import type { GoogleBooksResponse, GoogleBooksVolume } from '../types/GoogleBook
 import type { Book } from '../types/Book';
 import fetchWithTimeout from '../utils/fetchWithTimeout';
 import { googleBooksAdapter } from '../utils/GoogleBooksAdapter';
+import { cache } from '../utils/multilayerCache';
 
 const GOOGLE_BOOKS_API_URL = 'https://www.googleapis.com/books/v1/volumes';
 
@@ -38,6 +39,11 @@ export const searchBooks = async (
 
 export const getBookById = async (id: string): Promise<Book | null> => {
 	try {
+		const cachedBook = cache.get<Book>(`book_${id}`);
+		if (cachedBook) {
+			return cachedBook;
+		}
+
 		const response = await fetchWithTimeout(async () => fetch(`${GOOGLE_BOOKS_API_URL}/${id}`));
 
 		if (!response.ok) {
@@ -45,7 +51,9 @@ export const getBookById = async (id: string): Promise<Book | null> => {
 		}
 
 		const googleBook: GoogleBooksVolume = await response.json();
-		return googleBooksAdapter.transform(googleBook);
+		const book = googleBooksAdapter.transform(googleBook);
+		cache.set(`book_${id}`, book, { ttl: 300000, useStorage: true });
+		return book;
 	} catch (error) {
 		console.error('Error fetching book by ID:', error);
 		return null;

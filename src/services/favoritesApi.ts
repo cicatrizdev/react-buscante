@@ -1,11 +1,18 @@
 import type { Book } from '../types/Book';
 import fetchWithTimeout from '../utils/fetchWithTimeout';
 import { favoritesAdapter } from '../utils/FavoritesAdapter';
+import { cache } from '../utils/multilayerCache';
 
 const FAVORITES_API_URL = 'http://localhost:3001/favorites';
 
 export const getFavorites = async (): Promise<Book[]> => {
 	try {
+		const cachedFavorites = cache.get<Book[]>('favorites');
+		if (cachedFavorites) {
+			console.log('[FavoritesApi] Retornando favoritos do cache');
+			return cachedFavorites;
+		}
+
 		const response = await fetchWithTimeout(async () => fetch(FAVORITES_API_URL));
 
 		if (!response.ok) {
@@ -13,7 +20,9 @@ export const getFavorites = async (): Promise<Book[]> => {
 		}
 
 		const rawFavorites = await response.json();
-		return favoritesAdapter.transformArray(rawFavorites);
+		const favorites = favoritesAdapter.transformArray(rawFavorites);
+		cache.set('favorites', favorites, { ttl: 300000, useStorage: true });
+		return favorites;
 	} catch (error) {
 		console.error('Error fetching favorites:', error);
 		throw error;
@@ -37,7 +46,12 @@ export const addToFavorites = async (book: Book): Promise<Book> => {
 		}
 
 		const rawBook = await response.json();
-		return favoritesAdapter.transform(rawBook);
+		const newBook = favoritesAdapter.transform(rawBook);
+		cache.set('favorites', [...(await getFavorites()), newBook], {
+			ttl: 300000,
+			useStorage: true,
+		});
+		return newBook;
 	} catch (error) {
 		console.error('Error adding to favorites:', error);
 		throw error;
@@ -55,6 +69,15 @@ export const removeFromFavorites = async (bookId: string): Promise<void> => {
 		if (!response.ok) {
 			throw new Error(`Falha ao remover dos favoritos: ${response.statusText}`);
 		}
+
+		cache.set(
+			'favorites',
+			(await getFavorites()).filter((book) => book.id !== bookId),
+			{
+				ttl: 300000,
+				useStorage: true,
+			}
+		);
 	} catch (error) {
 		console.error('Error removing from favorites:', error);
 		throw error;
