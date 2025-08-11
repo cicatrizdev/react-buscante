@@ -1,49 +1,34 @@
 {
   "favorites": [
     {
-      "id": "RY7kp2dT0jwC",
-      "title": "Arquitetura de Nuvem (AWS)",
-      "author": "Manoel Veras",
-      "publishedDate": "",
-      "publisher": "Brasport",
-      "pageCount": 417,
+      "id": "pvGrDwAAQBAJ",
+      "title": "Essential TypeScript",
+      "author": "Adam Freeman",
+      "publishedDate": "2019-08-14",
+      "publisher": "Apress",
+      "pageCount": 551,
       "categories": [
         "Computers"
       ],
-      "description": "A computação de nuvem oferece inúmeros benefícios, incluindo elasticidade, pagamento pelo uso efetivo dos recursos, infraestrutura de autosserviço e automação baseada em APIs. Ela permite que as organizações tenham DATACENTERS automatizados e paguem somente por aquilo que utilizam. A plataforma utilizada para o desenho da arquitetura é a Amazon Web Services (AWS), que é abordada em detalhes e de forma estruturada. A própria Amazon utiliza a arquitetura AWS para operar um dos maiores varejos online do mundo. Empresas como Shell, Samsung, NASA, The New York Times, Grupo Pão de Açúcar, Gol Linhas Aéreas e SulAmérica Seguros já desfrutam dos benefícios da computação de nuvem e estabeleceram novas arquiteturas orientadas pela demanda. O livro traz uma abordagem sobre a construção de um DATACENTER utilizando a Arquitetura De Nuvem e a estratégia adotada foi estruturá-lo em três grandes partes; Aspectos Básicos, com conceitos, infraestrutura, precificação, identidade e acesso Serviços de Infraestrutura, sobre os serviços de computação, armazenamento, rede, banco de dados e gerenciamento; e Aspectos Avançados, cobrindo desenho da arquitetura, governança, segurança e continuidade.",
-      "thumbnail": "http://books.google.com/books/content?id=RY7kp2dT0jwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "previewLink": "http://books.google.com.br/books?id=RY7kp2dT0jwC&pg=PA16&dq=arquitetura&hl=&as_pt=BOOKS&cd=2&source=gbs_api",
-      "infoLink": "https://play.google.com/store/books/details?id=RY7kp2dT0jwC&source=gbs_api"
+      "description": "Work with Typescript and get the most from this versatile open source language. Author Adam Freeman begins this book by describing Typescript and the benefits it offers, and goes on to show you how to use TypeScript in realistic scenarios, going in-depth to give you the knowledge you need. Starting from the nuts-and-bolts and building up to the most advanced and sophisticated features, you will learn how TypeScript builds on the JavaScript type system to create a safer and more productive development experience and understand how TypeScript can be used to create applications using popular frameworks, including Node.js, Angular, React, and Vue.js. Each topic is covered clearly and concisely and is packed with the details you need to learn to be truly effective. The most important features are given a no-nonsense in-depth treatment and chapters include common problems and details of how to avoid them. What You Will Learn Gain a solid understanding of the TypeScript language and tools Use TypeScript for client- and server-side development Extend and customize TypeScript Debug and unit test your TypeScript code Who This Book Is For Developers who want to start using TypeScript, for example to create rich web applications using Angular, React, or Vue.js Adam Freeman is an experienced IT professional who has held senior positions in a range of companies, most recently serving as chief technology officer and chief operating officer of a global bank. Now retired, he spends his time writing and long-distance running.",
+      "thumbnail": "https://books.google.com/books/content?id=pvGrDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "previewLink": "https://books.google.com.br/books?id=pvGrDwAAQBAJ&pg=PA37&dq=typescript&hl=&as_pt=BOOKS&cd=3&source=gbs_api",
+      "infoLink": "https://play.google.com/store/books/details?id=pvGrDwAAQBAJ&source=gbs_api"
     },
     {
-      "id": "ZdFbEAAAQBAJ",
-      "title": "Arquitetura da Educação",
-      "author": "Rafael Diedrich",
-      "publishedDate": "2018-07-23",
-      "publisher": "Novas Edições Acadêmicas",
-      "pageCount": 95,
-      "categories": [
-        "Education"
-      ],
-      "description": "A educação é um processo natural, ela se fundamenta no desenvolvimento interno do aluno. As crianças são boas por natureza, elas têm uma tendência natural para se desenvolverem. Existe um distanciamento entre todos os seres humanos, este distanciamento precisa ser reduzido com elementos tirados da realidade conforme diz Pestalozzi. Neste sentido, o arquiteto representa a arte de construir esteticamente e funcionalmente estruturas com embasamento cultural, filosófico, estrutural, se tornando uma ciência pluridisciplinar. A arquiteto busca saber do distanciamento entre o ser humano e os meios em que vive atuando de forma pluridisciplinar e realizando assim uma exegese para então reformular o espaços, tornando-os confortáveis e contextualizados com a realidade do homem da atualidade. O docente assim como o arquiteto reconhece a distância entre ele e o aluno?, trazendo consigo embasamento cultural, filosófico, estrutural para construir sua aula, analisar seus alunos, a cultura em que vivem pois hoje existe a necessidade dos professores se adatarem com os alunos diante da distância que os separam.",
-      "thumbnail": "http://books.google.com/books/content?id=ZdFbEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "previewLink": "http://books.google.com.br/books?id=ZdFbEAAAQBAJ&pg=PA13&dq=arquitetura&hl=&as_pt=BOOKS&cd=4&source=gbs_api",
-      "infoLink": "http://books.google.com.br/books?id=ZdFbEAAAQBAJ&dq=arquitetura&hl=&as_pt=BOOKS&source=gbs_api"
-    },
-    {
-      "id": "AMKf7RPUcuoC",
-      "title": "Google Sites and Chrome For Dummies",
-      "author": "Ryan Teeter, Karl Barksdale",
-      "publishedDate": "2009-01-27",
-      "publisher": "For Dummies",
-      "pageCount": 460,
+      "id": "YD5zEAAAQBAJ",
+      "title": "Learning TypeScript",
+      "author": "Josh Goldberg",
+      "publishedDate": "2022-06-03",
+      "publisher": "\"O'Reilly Media, Inc.\"",
+      "pageCount": 320,
       "categories": [
         "Computers"
       ],
-      "description": "Curious about Google Sites and how team collaboration Web sites can help you share documents online from various locations? Curious about Google’s new Chrome browser? Google Sites & Chrome For Dummies has what you want to know! Today, Google is so much more than another word for “search.” Google Sites & Chrome For Dummies shows you how to create great collaborative Web sites with Google Sites and surf the Web with the super-fast Google Chrome browser. Find out how they work with other Google Apps, too. You’ll learn to: Take advantage of free hosting, free tools, and a simple, straightforward interface with Google Sites Set up a Google account or Google Apps account Create wiki sites that let coworkers collaborate on projects or keep family members up to date Use Google gadgets to keep track of projects, manage calendars and documents, or display photos Integrate documents, spreadsheets, presentations, and other Google Apps into your site Work with Contact List, Google Talk, and Google Chat, and handle e-mail with Gmail Download and install the speedy Google Chrome browser Install browser plug-ins, enable offline access to Google Docs, and manage misbehaving tabs You’ll even find instructions and examples to help you plan sites for personal and business use, plus a sample college course site. With advice from Google Sites & Chrome For Dummies, you can make collaboration easy and have the high-speed Web at your fingertips.",
-      "thumbnail": "https://books.google.com/books/content?id=AMKf7RPUcuoC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      "previewLink": "https://books.google.com.br/books?id=AMKf7RPUcuoC&dq=google&hl=&as_pt=BOOKS&cd=3&source=gbs_api",
-      "infoLink": "https://books.google.com.br/books?id=AMKf7RPUcuoC&dq=google&hl=&as_pt=BOOKS&source=gbs_api"
+      "description": "TypeScript has conquered the world of JavaScript: it's one of the world's fastest growing and most popular languages across developer surveys, widely used in consumer and business companies alike, and frequently credited for helping massive web applications scale. But what is TypeScript? How does it work, why does it work, and how can we use it? Learning TypeScript takes beginner to intermediate JavaScript programmers from knowing nothing about \"types\" or a \"type system\" to full mastery of the fundamentals of TypeScript. It's more than a means to find bugs and typos--it's a useful system for declaring the way our JavaScript should work and helping us stick to it.",
+      "thumbnail": "https://books.google.com/books/content?id=YD5zEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "previewLink": "https://books.google.com.br/books?id=YD5zEAAAQBAJ&pg=PA14&dq=typescript&hl=&as_pt=BOOKS&cd=4&source=gbs_api",
+      "infoLink": "https://books.google.com.br/books?id=YD5zEAAAQBAJ&dq=typescript&hl=&as_pt=BOOKS&source=gbs_api"
     }
   ]
 }
