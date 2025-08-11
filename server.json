@@ -1,19 +1,6 @@
 {
   "favorites": [
     {
-      "id": "_PMUa7tCNsMC",
-      "title": "O Senhor Senhor Dos Ane o Mundo De Toekien",
-      "author": "Unknown Author",
-      "publishedDate": "",
-      "publisher": "Editora Record",
-      "pageCount": 236,
-      "categories": [],
-      "description": "",
-      "thumbnail": "http://books.google.com/books/content?id=_PMUa7tCNsMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "previewLink": "http://books.google.com.br/books?id=_PMUa7tCNsMC&printsec=frontcover&dq=senhor+dos+aneis&hl=&as_pt=BOOKS&cd=4&source=gbs_api",
-      "infoLink": "http://books.google.com.br/books?id=_PMUa7tCNsMC&dq=senhor+dos+aneis&hl=&as_pt=BOOKS&source=gbs_api"
-    },
-    {
       "id": "RY7kp2dT0jwC",
       "title": "Arquitetura de Nuvem (AWS)",
       "author": "Manoel Veras",

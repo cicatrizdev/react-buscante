@@ -1,9 +1,10 @@
 async function fetchWithTimeout<T>(
 	fetcher: () => Promise<T>,
 	timeout: number = 5000,
-	retries: number = 2
+	retries: number = 3
 ): Promise<T> {
 	for (let attempt = 0; attempt < retries; attempt++) {
+		console.log(`Tentativa ${attempt + 1} de ${retries}...`);
 		try {
 			return await Promise.race([
 				fetcher(),

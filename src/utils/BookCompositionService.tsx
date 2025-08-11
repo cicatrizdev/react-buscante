@@ -54,17 +54,22 @@ class BookCompositionService {
 		}
 
 		try {
-			const [book, favoriteStatus] = await Promise.all([
+			const [book, favoriteStatus] = await Promise.allSettled([
 				getBookById(bookId),
 				this.checkFavoriteStatus(bookId),
 			]);
 
-			if (!book) {
+			if (book.status === 'rejected' || !book.value) {
 				console.log(`[BookCompositionService] Livro ${bookId} nao encontrado`);
 				return null;
 			}
 
-			const composedData = this.composedBookData(book, favoriteStatus);
+			if (favoriteStatus.status === 'rejected') {
+				console.log(`[BookCompositionService] Erro ao verificar se o livro ${bookId} é favorito`);
+				return null;
+			}
+
+			const composedData = this.composedBookData(book.value, favoriteStatus.value);
 
 			this.cache[bookId] = { data: composedData, timestamp: Date.now() };
 			return composedData;
